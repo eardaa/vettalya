@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vet Talya Veteriner Kliniği | Antalya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --deep-green: #1A4A3C;
+    --mid-green: #26614F;
+    --light-green: #3D8A6E;
+    --sage: #C4D9C2;
+    --cream: #F7F5F0;
+    --warm-white: #FDFCFA;
+    --amber: #E8A838;
+    --amber-dark: #B07A1A;
+    --text-dark: #1C1C1A;
+    --text-mid: #3D3D3A;
+    --text-muted: #7A7A72;
+    --border-light: rgba(26,74,60,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.35s, backdrop-filter 0.35s;
+  }
+  nav.scrolled {
+    background: rgba(26,74,60,0.97);
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--cream);
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--amber); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(247,245,240,0.8);
+    text-decoration: none;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--amber); }
+  .nav-cta {
+    background: var(--amber);
+    color: var(--deep-green) !important;
+    font-weight: 500 !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: #F0B845 !important; color: var(--deep-green) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--deep-green);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 2rem 4rem;
+  }
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: radial-gradient(circle at 1px 1px, var(--sage) 1px, transparent 0);
+    background-size: 28px 28px;
+  }
+  .hero-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--amber);
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--sage);
+  }
+  .hero-desc {
+    font-size: 1rem;
+    color: rgba(196,217,194,0.85);
+    max-width: 440px;
+    margin-bottom: 2.5rem;
+    line-height: 1.75;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--amber);
+    color: var(--deep-green);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #F0B845; transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--sage);
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid rgba(196,217,194,0.4);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--cream); border-color: var(--cream); }
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(196,217,194,0.15);
+  }
+  .hero-stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .hero-stat-val sup { font-size: 1rem; vertical-align: super; }
+  .hero-stat-label {
+    font-size: 0.78rem;
+    color: rgba(196,217,194,0.7);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* Animated Paw SVG */
+  .paw-circle {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(196,217,194,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .paw-circle::before {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border-radius: 50%;
+    border: 1px dashed rgba(196,217,194,0.08);
+  }
+  #paw-svg { width: 180px; height: 180px; }
+  .paw-path {
+    fill: none;
+    stroke: var(--sage);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw-paw 2.8s ease-out 0.5s forwards;
+  }
+  .paw-dot {
+    fill: var(--amber);
+    opacity: 0;
+    animation: dot-appear 0.4s ease-out forwards;
+  }
+  .paw-dot:nth-child(2) { animation-delay: 1.8s; }
+  .paw-dot:nth-child(3) { animation-delay: 2s; }
+  .paw-dot:nth-child(4) { animation-delay: 2.2s; }
+  .paw-dot:nth-child(5) { animation-delay: 2.4s; }
+  @keyframes draw-paw {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes dot-appear {
+    from { opacity: 0; transform: scale(0.4); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .badge-acil {
+    position: absolute;
+    top: 20px;
+    right: -10px;
+    background: var(--amber);
+    color: var(--deep-green);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.45rem 0.9rem;
+    border-radius: 2px;
+  }
+  .badge-rating {
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    background: var(--mid-green);
+    border: 1px solid rgba(196,217,194,0.2);
+    color: var(--cream);
+    font-size: 0.78rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .badge-rating .star { color: var(--amber); font-size: 0.85rem; }
+
+  /* SECTION STYLES */
+  section { padding: 6rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amber-dark);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: var(--text-dark);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.75;
+  }
+
+  /* HIZMETLER */
+  .services { background: var(--cream); }
+  .services-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+  .service-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 1.75rem;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .service-card:hover {
+    border-color: var(--light-green);
+    transform: translateY(-3px);
+  }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(26,74,60,0.06);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .service-icon svg { width: 22px; height: 22px; stroke: var(--deep-green); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .service-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* HAKKIMIZDA */
+  .about { background: var(--deep-green); padding: 6rem 2rem; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about .section-label { color: var(--amber); }
+  .about .section-title { color: var(--cream); }
+  .about-text {
+    font-size: 0.975rem;
+    color: rgba(196,217,194,0.85);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+  .about-text em {
+    color: var(--sage);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .about-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .about-feature {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(196,217,194,0.12);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .about-feature-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--amber);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .about-feature-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.25rem;
+  }
+  .about-feature-desc {
+    font-size: 0.82rem;
+    color: rgba(196,217,194,0.65);
+    line-height: 1.6;
+  }
+
+  /* YORUMLAR */
+  .reviews { background: var(--warm-white); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+  .review-card {
+    background: var(--cream);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 1.75rem;
+  }
+  .review-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1rem;
+  }
+  .review-star {
+    color: var(--amber);
+    font-size: 0.9rem;
+  }
+  .review-text {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+  }
+  .review-author {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+  .review-author strong {
+    color: var(--deep-green);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .reviews-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(26,74,60,0.06);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    color: var(--deep-green);
+    margin-top: 2.5rem;
+  }
+  .reviews-badge strong { font-weight: 500; }
+
+  /* ÇALIŞMA SAATLERİ */
+  .hours { background: var(--cream); }
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .hours-table tr {
+    border-bottom: 1px solid var(--border-light);
+  }
+  .hours-table tr:last-child { border-bottom: none; }
+  .hours-table td {
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+  }
+  .hours-table td:first-child { color: var(--text-mid); }
+  .hours-table td:last-child {
+    text-align: right;
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+  .hours-table .closed { color: var(--text-muted); }
+  .acil-box {
+    background: var(--deep-green);
+    border-radius: 8px;
+    padding: 2rem;
+    color: var(--cream);
+  }
+  .acil-box-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--cream);
+  }
+  .acil-box-desc {
+    font-size: 0.875rem;
+    color: rgba(196,217,194,0.8);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .acil-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(196,217,194,0.15);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+  }
+  .acil-phone svg { width: 20px; height: 20px; stroke: var(--amber); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .acil-phone-label { font-size: 0.72rem; color: rgba(196,217,194,0.6); letter-spacing: 0.08em; text-transform: uppercase; }
+  .acil-phone-num { font-size: 1.1rem; font-weight: 500; color: var(--cream); }
+
+  /* İLETİŞİM / HARİTA */
+  .contact { background: var(--warm-white); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .contact-item-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(26,74,60,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-item-icon svg { width: 18px; height: 18px; stroke: var(--deep-green); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .contact-item-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+  .contact-item-val {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .contact-item-val a {
+    color: var(--deep-green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-light);
+    transition: border-color 0.2s;
+  }
+  .contact-item-val a:hover { border-color: var(--deep-green); }
+  .map-frame {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 340px;
+    border: 1px solid var(--border-light);
+  }
+  .map-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--deep-green);
+    padding: 3rem 2rem;
+    color: rgba(196,217,194,0.6);
+    font-size: 0.82rem;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--cream);
+  }
+  .footer-logo span { color: var(--amber); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-container, .about-grid, .hours-grid, .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .hero-visual { display: none; }
+    .nav-links { display: none; }
+    .about-grid { direction: initial; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 4rem 1.25rem; }
+    .hero { padding: 5rem 1.25rem 3rem; }
+    nav { padding: 1rem 1.25rem; }
+    .hero-stats { flex-wrap: wrap; gap: 1.25rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .paw-path { animation: none; stroke-dashoffset: 0; }
+    .paw-dot { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVİGASYON -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">Vet <span>Talya</span></a>
+  <ul class="nav-links">
+    <li><a href="#hizmetler">Hizmetler</a></li>
+    <li><a href="#hakkimizda">Hakkımızda</a></li>
+    <li><a href="#yorumlar">Yorumlar</a></li>
+    <li><a href="#iletisim">İletişim</a></li>
+    <li><a href="tel:+905349219029" class="nav-cta">Bizi Arayın</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="anasayfa">
+  <div class="hero-bg-pattern" aria-hidden="true"></div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Muratpaşa, Antalya</p>
+      <h1 class="hero-title">
+        Dostlarınız için<br>
+        <em>şefkat</em> ve<br>
+        uzmanlık bir arada
+      </h1>
+      <p class="hero-desc">
+        Patili, kanatlı ve yüzgeçli tüm dostlarınıza yönelik kapsamlı veteriner hizmetleri. Acil durumlarda haftanın 6 günü 08:30–22:00 arası yanınızdayız.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:+905349219029" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.7h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          Hemen Ara: 0534 921 90 29
+        </a>
+        <a href="#hizmetler" class="btn-ghost">
+          Hizmetlerimizi incele
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-val">4.8<sup>★</sup></div>
+          <div class="hero-stat-label">Google Puanı</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">88+</div>
+          <div class="hero-stat-label">Müşteri Yorumu</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">7/24</div>
+          <div class="hero-stat-label">Acil Hizmet</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="paw-circle">
+        <svg id="paw-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pençe izi animasyonu">
+          <!-- Büyük taban pedi -->
+          <ellipse cx="100" cy="135" rx="38" ry="32" class="paw-path"/>
+          <!-- Sol üst tırnak -->
+          <ellipse cx="55" cy="90" rx="16" ry="13" class="paw-path" style="animation-delay:0.6s"/>
+          <!-- Orta sol tırnak -->
+          <ellipse cx="80" cy="75" rx="14" ry="12" class="paw-path" style="animation-delay:0.85s"/>
+          <!-- Orta sağ tırnak -->
+          <ellipse cx="120" cy="75" rx="14" ry="12" class="paw-path" style="animation-delay:1.1s"/>
+          <!-- Sağ üst tırnak -->
+          <ellipse cx="145" cy="90" rx="16" ry="13" class="paw-path" style="animation-delay:1.35s"/>
+          <!-- Amber dolgu noktaları -->
+          <ellipse cx="100" cy="135" rx="16" ry="14" class="paw-dot" style="fill:rgba(232,168,56,0.15); stroke: var(--amber); stroke-width:1.5; animation-delay:2.5s"/>
+        </svg>
+        <span class="badge-acil">7/24 Acil</span>
+        <div class="badge-rating">
+          <span class="star">★★★★★</span>
+          <span>4.8 / 5 Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HİZMETLER -->
+<section class="services" id="hizmetler">
+  <div class="container">
+    <div class="services-head">
+      <div>
+        <p class="section-label">Sunduğumuz Hizmetler</p>
+        <h2 class="section-title">Her türe, her ihtiyaca<br>kapsamlı bakım</h2>
+      </div>
+      <p class="section-sub">Patili, kanatlı ve yüzgeçli tüm dostlarınız için koruyucu hekimlikten ileri cerrahi müdahaleye uzanan tam hizmet yelpazesi.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="service-name">Koruyucu Hekimlik</div>
+        <p class="service-desc">Aşılama, parazit kontrolü ve periyodik sağlık kontrolleri ile dostlarınızın hastalanmadan korunmasını sağlıyoruz.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="service-name">Cerrahi &amp; Ortopedi</div>
+        <p class="service-desc">Tam donanımlı ameliyathanemizde patili ve kanatlı dostlarınıza acil dahil tüm cerrahi müdahaleler yapılmaktadır.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="service-name">Dahiliye &amp; Tedavi</div>
+        <p class="service-desc">Kapsamlı muayene, laboratuvar analizleri ve güncel tedavi protokolleriyle hastalıkların doğru teşhis ve tedavisi.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="service-name">Doğum &amp; Jinekoloji</div>
+        <p class="service-desc">Son model ekipmanlarla kanatlı ve patili tüm türlerde doğum ve jinekoloji hizmetleri, acil dahil 7/24 verilmektedir.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="service-name">Ultrasonografi &amp; Röntgen</div>
+        <p class="service-desc">Dijital görüntüleme sistemlerimizle hızlı ve doğru tanı. Sonuçlar anında değerlendirilerek tedavi planlanır.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="service-name">Ağız &amp; Diş Sağlığı</div>
+        <p class="service-desc">Rutin kontrol dahilinde dental muayeneler ve modern dental ünitelerimizle diş tedavisi. Kanatlı ve patili türler için.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-name">Yoğun Bakım</div>
+        <p class="service-desc">Ameliyat sonrası ve yeni doğan yavru bakımı için küvöz desteği dahil optimum yoğun bakım ortamı sunulmaktadır.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+        </div>
+        <div class="service-name">Pet Kuaför</div>
+        <p class="service-desc">Irka özel tıraş ve bakım hizmetleriyle evcil hayvanınızın deri ve tüy sağlığını koruyoruz.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="service-name">Mikroçip Uygulama</div>
+        <p class="service-desc">Yasal zorunluluk olan mikroçip uygulaması ve kayıt işlemleri kısa sürede, güvenle tamamlanmaktadır.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HAKKIMIZDA -->
+<section class="about" id="hakkimizda">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="section-label">Kliniğimiz Hakkında</p>
+        <h2 class="section-title" style="color: var(--cream);">Hayvan sevgisiyle<br>kurulan bir klinik</h2>
+        <p class="about-text" style="margin-top:1.25rem;">
+          Vet Talya Veteriner Kliniği, Antalya Muratpaşa'da tüm patili, kanatlı ve yüzgeçli dostlara en kaliteli sağlık hizmetini sunmak amacıyla kurulmuştur.
+        </p>
+        <p class="about-text">
+          Kliniğimizin sahibi ve baş hekimi <em>Murat Hoca</em>, hayvanlara olan derin sevgisi ve mesleğine bağlılığıyla tanınan, güvenilir ve deneyimli bir veteriner hekimdir. Hasta sahipleri 7/24 kendisine ulaşabiliyor.
+        </p>
+        <p class="about-text">
+          Güncel teknolojik ekipmanlar ve kapsamlı laboratuvar altyapımızla her türde hayvana, her yaşta, doğru teşhis ve etkili tedavi sunuyoruz.
+        </p>
+      </div>
+      <div class="about-visual">
+        <div class="about-feature">
+          <div class="about-feature-dot"></div>
+          <div>
+            <div class="about-feature-title">Tüm türlere hizmet</div>
+            <div class="about-feature-desc">Kedi, köpek, kuş, balık ve egzotik türler dahil tüm evcil hayvanlar için uzman bakım sunulmaktadır.</div>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-dot"></div>
+          <div>
+            <div class="about-feature-title">İleri cerrahi donanım</div>
+            <div class="about-feature-desc">Tam donanımlı ameliyathane, dijital görüntüleme ve modern dental ünitelerle her müdahaleye hazırız.</div>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-dot"></div>
+          <div>
+            <div class="about-feature-title">Acil erişim kolaylığı</div>
+            <div class="about-feature-desc">Hasta sahipleri doğrudan Murat Hoca'ya her saat ulaşabilir; acil durumlarda bekleme olmaz.</div>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-dot"></div>
+          <div>
+            <div class="about-feature-title">Sokak hayvanlarına destek</div>
+            <div class="about-feature-desc">Özel koşullarda sokak kedisi ve köpeklerine anlayışla yaklaşılır; bu, özel kliniklerde nadiren görülen bir durumdur.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YORUMLAR -->
+<section class="reviews" id="yorumlar">
+  <div class="container">
+    <p class="section-label">Müşteri Yorumları</p>
+    <h2 class="section-title">Sahiplerinden,<br>bizzat dinleyin</h2>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+        </div>
+        <p class="review-text">"Köpeğimiz 6 aylıkken COVID-19 ve hemorajik ishal geçirdi. Birkaç veteriner yaşayamaz dedi. Murat Hoca onu öz köpeği gibi benimseyip sabah akşam baktı ve hayatta tuttu. O günden bu yana 7/24 ulaşabildiğimiz bir aile dostu oldu."</p>
+        <div class="review-author">
+          <strong>Google Yorumu</strong>
+          Doğrulanmış müşteri
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+        </div>
+        <p class="review-text">"Kedimi kısırlaştırma için Vet Talya Kliniği'ne götürdüm. Sahibi Murat Bey son derece ilgiliydi. Kedim çok hızlı iyileşti. Tüm gerekli bilgileri paylaştı. Teşekkürler, kesinlikle tavsiye ederim."</p>
+        <div class="review-author">
+          <strong>Google Yorumu</strong>
+          Doğrulanmış müşteri
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+        </div>
+        <p class="review-text">"Murat Bey gerçek anlamda harika bir insan ve son derece dürüst bir centilmen. Hayvanları gerçekten seven, Allah korkusuyla çalışan bir veteriner. Kızımızı gece geç saatte acil ameliyatla sağlığına kavuşturdu; ona çok minnettarım."</p>
+        <div class="review-author">
+          <strong>Google Yorumu</strong>
+          Doğrulanmış müşteri
+        </div>
+      </div>
+
+    </div>
+    <div class="reviews-badge">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <span>Google'da <strong>4.8 / 5</strong> ortalama puan · <strong>88</strong> değerlendirme</span>
+    </div>
+  </div>
+</section>
+
+<!-- ÇALIŞMA SAATLERİ -->
+<section class="hours" id="saatler">
+  <div class="container">
+    <p class="section-label">Çalışma Saatleri</p>
+    <h2 class="section-title">Ne zaman gelebilirsiniz</h2>
+    <div class="hours-grid">
+      <div>
+        <table class="hours-table" aria-label="Haftalık çalışma saatleri">
+          <tbody>
+            <tr>
+              <td>Pazartesi</td>
+              <td>08:30 – 22:00</td>
+            </tr>
+            <tr>
+              <td>Salı</td>
+              <td>08:30 – 22:00</td>
+            </tr>
+            <tr>
+              <td>Çarşamba</td>
+              <td>08:30 – 22:00</td>
+            </tr>
+            <tr>
+              <td>Perşembe</td>
+              <td>08:30 – 22:00</td>
+            </tr>
+            <tr>
+              <td>Cuma</td>
+              <td>08:30 – 22:00</td>
+            </tr>
+            <tr>
+              <td>Cumartesi</td>
+              <td>08:30 – 22:00</td>
+            </tr>
+            <tr>
+              <td>Pazar</td>
+              <td class="closed">Kapalı</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="acil-box">
+        <div class="acil-box-title">Acil Durumlar İçin</div>
+        <p class="acil-box-desc">
+          Kliniğimiz Pazar günleri kapalı olsa da acil durumlarda Murat Hoca'ya her zaman ulaşabilirsiniz. Hasta sahipleri 7/24 kendisine doğrudan telefon açabilir.
+        </p>
+        <div class="acil-phone">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.7h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          <div>
+            <div class="acil-phone-label">Telefon</div>
+            <a href="tel:+905349219029" class="acil-phone-num" style="color: var(--cream); text-decoration: none;">0534 921 90 29</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- İLETİŞİM -->
+<section class="contact" id="iletisim">
+  <div class="container">
+    <p class="section-label">Bize Ulaşın</p>
+    <h2 class="section-title">Kliniğimizi bulun</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Adres</div>
+            <div class="contact-item-val">Küçük Çelik Apartmanı, Kızılarık Mah.<br>Köroğlu Blv. No: 39/B<br>07310 Muratpaşa / Antalya</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.7h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Telefon</div>
+            <div class="contact-item-val"><a href="tel:+905349219029">0534 921 90 29</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Çalışma Saatleri</div>
+            <div class="contact-item-val">Pzt – Cmt: 08:30 – 22:00<br><span style="color: var(--text-muted); font-weight: 400; font-size: 0.85rem;">Pazar: Kapalı (Acil için arayın)</span></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Baş Hekim</div>
+            <div class="contact-item-val">Murat Hoca</div>
+          </div>
+        </div>
+
+        <a href="tel:+905349219029" class="btn-primary" style="align-self: flex-start; margin-top: 0.5rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.7h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.34a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          Randevu veya Acil İçin Arayın
+        </a>
+      </div>
+
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.4101391038957!2d30.72058147573164!3d36.904457061815826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c3855d364a433f%3A0x7df73b4bfa78db56!2zVkVUIFRBTFlBIFZFVEVSxLBORVIgS0zEsE7EsMSexLA!5e0!3m2!1str!2str!4v1782563769764!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Vet Talya Veteriner Kliniği harita konumu"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Vet <span>Talya</span> Veteriner Kliniği</div>
+    <div>Köroğlu Blv. No:39/B, Muratpaşa / Antalya &nbsp;·&nbsp; 0534 921 90 29</div>
+    <div>© 2025 Vet Talya Veteriner Kliniği</div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+</script>
+
+</body>
+</html>
